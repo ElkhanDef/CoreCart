@@ -40,9 +40,6 @@ public class UserService implements IUserService {
         Role role = roleRepository.getRoleByName(RoleNames.CUSTOMER)
                 .orElseThrow(() -> new ResourceNotFoundException("Role Not Found"));
 
-        System.out.println(role.getId());
-
-
         User user = new User();
         Address address = new Address(
                 userDto.getAddress().getAddress(),

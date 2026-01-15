@@ -12,7 +12,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
-@EnableMethodSecurity
 public class SecurityConfig {
 
 
@@ -31,7 +30,9 @@ public class SecurityConfig {
                                         "/swagger-ui.html"
                                 ).permitAll()
                                 .requestMatchers(HttpMethod.GET, "/v1/products").permitAll()
+                                .requestMatchers("/v1/payments/success", "/v1/payments/cancel").permitAll()
                                 .requestMatchers("/v1/cart/**").hasAnyRole("CUSTOMER", "ADMIN")
+                                .requestMatchers("/v1/payments/**").hasAnyRole("CUSTOMER", "ADMIN")
                                 .anyRequest().permitAll()
                 );
 

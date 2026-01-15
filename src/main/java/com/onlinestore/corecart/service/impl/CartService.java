@@ -43,7 +43,7 @@ public class CartService implements ICartService {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         if (authentication == null || !authentication.isAuthenticated()) {
-            throw new RuntimeException("UNAUTHENTICATED");
+            throw new RuntimeException("Authentication required");
         }
 
         CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();

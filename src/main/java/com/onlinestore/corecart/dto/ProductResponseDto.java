@@ -10,6 +10,7 @@ public class ProductResponseDto {
     private String name;
     private String description;
     private BigDecimal price;
+    private BigDecimal discount;
     private int stock;
 
     public BigDecimal getPrice() {
@@ -58,5 +59,12 @@ public class ProductResponseDto {
 
     public void setStock(int stock) {
         this.stock = stock;
+    }
+
+    public BigDecimal getDiscount() {
+        return discount;
+    }
+    public void setDiscount(BigDecimal discount) {
+        this.discount = discount;
     }
 }

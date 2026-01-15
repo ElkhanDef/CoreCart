@@ -19,8 +19,8 @@ public class ProductRepository implements IProductRepository {
     @Override
     public Optional<Product> getBySlug(String slug) {
 
-        return em.createQuery("select p from Product p where p.slug = :slug",  Product.class)
-        .setParameter("slug", slug)
+        return em.createQuery("select p from Product p where p.slug = :slug", Product.class)
+                .setParameter("slug", slug)
                 .getResultList().stream().findFirst();
 
     }
@@ -63,7 +63,7 @@ public class ProductRepository implements IProductRepository {
 
         Object result = query.getSingleResult();
 
-        return ((Number) result).intValue() == 1;
+        return (boolean) result;
 
 
     }

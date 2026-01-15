@@ -45,8 +45,6 @@ public class ProductController {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(productService.save(productCreateDto));
-
-
     }
 
     @DeleteMapping(path = "/{id}")
