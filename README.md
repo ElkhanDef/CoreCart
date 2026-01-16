@@ -7,12 +7,17 @@ Backend e-commerce application built with Java and Spring Boot.
 - Spring Boot
 - Spring Security
 - JPA / Hibernate
-- MySQL
+- PostgreSQL
+- Stripe API
+- Gradle
 
 ## Features
 - User authentication & authorization
 - Product management
 - Cart & order flow
+- Stripe Checkout payment integration
+- Payment verification
+- RESTful API design
 
 ## How to Run
 - Configure application.properties
